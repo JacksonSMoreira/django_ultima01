@@ -1,11 +1,12 @@
 <!doctype html>
+{% load bootstrap5 %}
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
     <title>Pet Online - Reserve já o banho do seu pet</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
+    <link  href="bootstrap.min.css.map" rel="script">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -61,7 +62,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="script">
   </head>
   <body>
     
@@ -77,35 +78,21 @@
     <p>
       {{ telefone }} - {{ responsavel|upper }} <br> ou <br> Envie mensagem preenchendo seu dados.
     </p>
+    {% if sucesso %}
+    <p class="alert alert-success">Mensagem enviada com sucesso</p>
+    {% endif %}
         <form action="" method="post">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="id_nome">Nome</label>
-                        <input types="text" class="form-control" id="od_nome" name="nome">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="id_nome">Email</label>
-                        <input types="email" class="form-control" id="id_email" name="email">
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="id_nome">Mensagem</label>
-                        <textarea name="mensagem" id="id_mensagem" cols="30" rows="10" class="form-control"></textarea>
-                    </div>
-                </div>
-            </div>
+          {% csrf_token %}
+          {% bootstrap_form form %}
             <hr>
             <button type="submit" class="btn btn-primary">Enviar mensagem</button>
         </form>
+        
     </main>
   <footer class="pt-5 my-5 text-muted border-top">
     Curso Ultima School
   </footer>
   </div>
-      
+     
  </body>
 </html>
