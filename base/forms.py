@@ -11,3 +11,9 @@ class ContatoForm(forms.Form):
         #class Meta:
            # model = Contato
            # fields = ['nome', 'email', 'mensagem']
+class ReservaForm(forms.Form):
+        nome_responsavel = forms.CharField()
+        telefone = forms.CharField()
+        nome_pet = forms.CharField()
+        data_reserva = forms.DateField()
+        observações = forms.CharField(widget=forms.Textarea)

@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from base.views import inicio
 from base.views import contato
+from base.views import reserva
 
 urlpatterns = [
+    path('reserva/', reserva),
     path('contato/', contato),
     path('', inicio),
     path('admin/', admin.site.urls),
