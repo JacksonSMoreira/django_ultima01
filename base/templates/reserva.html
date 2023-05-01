@@ -1,9 +1,10 @@
 <!doctype html>
+{% load bootstrap5 %}
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
-    <title>Reserve já o banho do seu pet</title>
+    <title>Reserve já</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
     <style>
@@ -77,7 +78,17 @@
   </header>
 
   <main>
-    <h1>Reserve já o banho do seu Pet</h1>
+    <h1>Reserve já!</h1>
+    {% if sucesso %}
+    <p class="alert alert-success">Mensagem enviada com sucesso</p>
+    {% endif %}
+        <form action="" method="post">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+            <hr>
+            <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        </form>
+    
   </main>
   <footer class="pt-5 my-5 text-muted border-top">
     Curso Ultima School

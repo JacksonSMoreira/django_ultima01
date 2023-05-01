@@ -37,7 +37,7 @@ def reserva(request):
         'form': form,
         'sucesso': sucesso
     }
-    return render(request,'contato.html', contexto)
+    return render(request,'reserva.html', contexto)
 '''if request.method == 'POST':
         print(request.POST)'''
     
